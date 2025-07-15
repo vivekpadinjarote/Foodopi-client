@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.cart-container{
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: auto;
+    height: 90vh;
+}
+
+.cart-container .breadcrumbs{
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background-color: #f8f9fa;
+    height: 80vh;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    gap: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+    margin-top: 10px;
+}
+
+
+.cart-item {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.cart-item p{
+    display: inline;
+    padding: 5px 10px;
+    font-size: smaller;
+    color: #6c757d;
+}
+
+.cart-item h4 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.cart-page-buttons{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20px;
+    position: absolute;
+    bottom: 20px;
+    font-size: large;
+}
+
+.cart-item .counter-controls {
+    position: absolute;
+    top: 10px;
+    right: 3px;
+    height: 1.2em;
+}
+
+.cart-total {
+    padding: 5px 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#pay-button{
+    border: none;
+    background-color: #12af6e;
+    color: white;
+    padding:5px 10px;
+    font-family: "Sulphur Point";
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#clearCart{
+    border: none;
+    background-color: crimson;
+    color: white;
+    padding:5px 8px;
+    font-family: "Sulphur Point";
+    border-radius: 10px;
+}
+
+@media screen and (max-width:425px) {
+    .cart-item h4{
+        font-size: small;
+        width: 80%;
+    }
+
+    .cart-item p{
+        font-size: x-small;
+    }
+
+    .cart-page h1{
+        font-size: larger;
+    }
+    
+    .cart-page-buttons{
+        font-size: small;
+        column-gap: 10px;
+    }
+}

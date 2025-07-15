@@ -1,0 +1,239 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
+    
+    .background-img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        display: block;
+        opacity: 0.9;
+    }
+
+    .brandLogo{
+        position: relative;
+        z-index: 1;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    
+
+    .brandLogo .logoname{
+        display: flex; 
+        align-items: center;
+        gap: 10px;
+        font-size: 40px;
+        color: white;
+        position: fixed;
+        top: 35%;
+        left: 350px;
+        text-shadow: 1px 2px 5px #0000009f;
+    }
+
+    .brandLogo a img{
+        width:50px;
+        height: 100%;
+    }
+
+    .tagline{
+        position: absolute;
+        width: 450px;
+        top:45%;
+        left:350px;
+    }
+
+    .tagline h3{
+        color: #ffffff;
+        font-size: 50px;
+        line-height: 1em;
+        text-shadow: 0 4px 4px #0000006c;
+        margin-bottom: 10px;
+    }
+
+    .tagline p{
+        color: #bbffbb;
+        line-height: 1.2em;
+    }
+
+    #link{
+        line-height: 5em;
+        text-decoration: none;
+        color: #bbffbb;
+    }
+
+    #link span{
+        border: 1px solid #bbffbb;
+        padding: 6px 9px;
+        border-radius: 20px;
+    }
+
+    .landing-nav-items{
+        padding-top: 20px;
+        display: flex;
+        gap:20px;
+        justify-content: center;
+    }
+
+    .landing-nav-items li{
+        color: white;
+        cursor: pointer;
+    }
+
+    .landing-nav-items li::after{
+       content: "";
+       height: 4px;
+       width:0;
+       display: block;
+       background-color: #bbffbb;
+       transition: width 0.6s ease;
+    }
+    .landing-nav-items li:hover::after{
+        width: 100%;
+    }
+
+    .landing-listitem{
+        color: #bbffbb;
+        text-decoration: none;
+    }
+
+    .landing-nav{
+        margin: auto;
+        width:80vw;
+        color: white;
+    }
+
+    .landing-nav::after{
+        margin-top: 3px;
+        content: "";
+        height: 1px;
+        width:100%;
+        background-color: #bbffbb;
+        display: block;
+    }
+
+    @media only screen and (max-width:768px)and (min-width:600px){
+
+        
+    .brandLogo .logoname{
+        left: 180px;
+    }
+
+    .brandLogo a img{
+        width:50px;
+        height: 100%;
+    }
+
+    .tagline{
+        width:300px;
+        left:160px;
+    }
+
+    .tagline h3{
+        color: #ffffff;
+        font-size: 35px;
+        line-height: 1em;
+        text-shadow: 0 4px 4px #0000006c;
+        margin-bottom: 10px;
+    }
+
+     .tagline p{
+        font-size: small;
+        line-height: 1.2em;
+    }
+
+
+
+    }
+
+        @media only screen and (max-width:600px)and (min-width:540px){
+
+        
+    .brandLogo .logoname{
+        left: 120px;
+        font-size: 28px;
+    }
+
+    .brandLogo a img{
+        width:40px;
+        height: 100%;
+    }
+
+    .tagline{
+        width:280px;
+        left: 120px;
+    }
+
+    .tagline h3{
+        color: #ffffff;
+        font-size: 28px;
+        line-height: 1em;
+        text-shadow: 0 4px 4px #0000006c;
+        margin-bottom: 10px;
+    }
+
+     .tagline p{
+        font-size: small;
+        line-height: 1.2em;
+    }
+
+        #link{
+            font-size: small;
+        line-height: 5em;
+        text-decoration: none;
+        color: #bbffbb;
+    }
+
+    }
+
+     @media only screen and (max-width:540px){
+
+        
+    .brandLogo .logoname{
+        top:35%;
+        left: 10%;
+        font-size: 20px;
+    }
+
+    .brandLogo a img{
+        width:30px;
+        height: 100%;
+    }
+
+    .tagline{
+        top:45%;
+        width:80%;
+        left: 10%;
+    }
+
+    .tagline h3{
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 1em;
+        text-shadow: 0 4px 4px #0000006c;
+        margin-bottom: 10px;
+    }
+
+     .tagline p{
+        font-size: smaller;
+        line-height: 1.2em;
+    }
+
+        #link{
+            font-size: smaller;
+        line-height: 5em;
+        text-decoration: none;
+        color: #bbffbb;
+    }
+
+    }

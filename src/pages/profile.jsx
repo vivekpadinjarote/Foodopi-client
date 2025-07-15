@@ -1,17 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import Navbar from '../components/navbar/navbar'
 import './profile.css'
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import EditProfile from '../components/update-profile/edit-profile';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import api from '../utils/axios';
 import { setCredentials } from '../store/auth';
+import MyOrders from '../components/my-orders';
+
 
 export default function Profile(){
     const user = useSelector((store)=> store.auth.user)
-    const accessToken = useSelector((store)=>store.auth.accessToken)
     const navigate = useNavigate()
-    const [showEditProfile,setShowEditProfile] = useState(false)
+    const {setShowEditProfile} = useOutletContext()
     const [processing, setProcessing] = useState(false)
     const dispatch = useDispatch()
 
@@ -62,7 +61,6 @@ export default function Profile(){
 
     return(
         <>
-        {showEditProfile? <EditProfile setShowEditProfile={setShowEditProfile} />:<></>}
         
         <div className="profile-container">
             <div className="image-container">
@@ -79,7 +77,7 @@ export default function Profile(){
                 
                 
             <div className="details-container">
-                <button id='edit' onClick={()=>setShowEditProfile(true)}><i className='material-icons'>edit</i></button>
+                <button id='edit' onClick={()=>setShowEditProfile(prev=>!prev)}><i className='material-icons'>edit</i></button>
                 <h3>Profile</h3>
                 <h5>Name</h5>
                 <p className="data-field">{user?.userName}</p>
@@ -90,9 +88,7 @@ export default function Profile(){
                 <h5>Address</h5>
                 <p className="data-field">{user?.userAddress || "No Address"}</p>
             </div>
-        <div className="my-orders">
-            <h3>My Orders</h3>
-        </div>
+            <MyOrders />
         </div>
         </>
     )

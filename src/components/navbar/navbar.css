@@ -21,6 +21,7 @@
 .header a {
     margin-right: auto;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .header label {
@@ -77,14 +78,21 @@ ul {
     gap: 3px;
     align-items: center;
     text-decoration: none;
-    color: rgb(134, 219, 179);
+    color: #86dbb3;
     transition: color 0.3s ease;
+    background-color: transparent;
+    border: none;
 }
 .listitem:hover {
     color: rgb(98, 102, 100);
 }
 .listitem.active {
     color: #fff;
+}
+
+.nav-btn {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 @media (max-width: 720px) {

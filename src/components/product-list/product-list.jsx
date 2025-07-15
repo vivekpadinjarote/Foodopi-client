@@ -1,11 +1,10 @@
 import './product-list.css'
-import { useEffect,useRef,useState } from 'react'
-import Menulist from '../menu-list/menu-list.jsx';
+import { useEffect,useRef} from 'react'
 
-function ProductList(){
+function ProductList(props){
+    const {item, setItem} = props;
     const navRef = useRef(null);
     const sentinelRef = useRef(null)
-    const [item,setItem] = useState('all');
 
     function handleClick(x){
         switch(x){
@@ -49,9 +48,7 @@ function ProductList(){
         <div style={{textAlign:'center',margin:"10px auto"}}><h2 className='fancy-font' id='menu-heading' style={{color:"#13293D"}}>Explore the Menu</h2></div>
         <div ref={sentinelRef} style={{height:"1px"}}></div>
         <div className="product-list-nav" ref={navRef}>
-            {/*Wrap the image-link in <li> and add onClick.
-            In the onClick perfoem a function call where the function returns a value.
-            Based on that value show the component for filtered menu as per the image-link category */}
+            
             <div className='items'>
 
                 <div onClick={e=>{e.preventDefault();handleClick("all")}} className={`image-link ${item === 'all' ? 'active' : ''}`}>
@@ -89,9 +86,7 @@ function ProductList(){
             </div>
         </div>
         <div style={{width:"90vw",margin:"auto"}}><hr /></div>
-        <div style={{width:"90vw",margin:"auto"}} id='menu'>
-            <Menulist item={item} />
-        </div>
+        
         </>
     )
 }

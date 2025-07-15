@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import CardCarousal from '../components/card-carousal/card-carousal';
-import Login from '../components/Login-popup/login';
-import Navbar from '../components/navbar/navbar';
 import ProductList from '../components/product-list/product-list';
+import Menulist from '../components/menu-list/menu-list.jsx';
 function Home() {
-  const [showLogin, setShowLogin] = useState(false);
 
+    const [item,setItem] = useState('all');
 
   return (
     <>
     <div>
         <CardCarousal />
-      <ProductList />
+      <ProductList setItem={setItem} item={item} />
+      <div style={{width:"90vw",margin:"auto"}} id='menu'>
+            <Menulist item={item} />
+        </div>
     </div>
     </>
   );

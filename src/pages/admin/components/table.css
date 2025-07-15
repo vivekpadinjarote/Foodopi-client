@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.table-container {
+    width: 80vw;
+    height: 100%;
+    margin:  10px auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    
+}
+thead th{
+    background-color: #86dbb3;
+    color: black;
+    border: 1px solid #12af6e;
+    cursor: pointer;
+}
+
+tbody td{
+    text-align: left;
+    padding: 4px 5px;
+    border: 1px solid #12af6e;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #dcfde434;
+}
+
+#veg {
+    color: green;
+    font-size:x-small;
+    text-align: center;
+}
+
+#non-veg {
+    color: rgb(218, 48, 48);
+    font-size: x-small;
+    text-align: center;
+}
+
+#actions {
+    text-align: center;
+}
+
+.edit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+    margin-right: 2px;
+    color: rgb(33, 33, 219);
+}
+
+.edit::after {
+    content: "Edit";
+    font-size: small;
+}
+
+.delete{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: rgb(248, 67, 67);
+    cursor: pointer;
+    padding: 0 8px;
+}
+.delete::after {
+    content: "Delete";
+    font-size: small;
+}
+
+.FaSort{
+    color: #0000003f;
+    cursor: pointer;
+    margin-left: 5px;
+    line-height: 1em;
+    padding-top: 5px;
+}
+
+.FaSort.sorted {
+    color: #000000;
+}
+
+
+.table-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    cursor:default;
+}
+
+.table-pagination button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px 0px;
+    font-size: large;
+    color: #12af6e;
+}
+
+.table-pagination button:disabled {
+    color: #ccc;
+    cursor:auto;
+}
+
+.addItemButton {
+    background-color: #12af6e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}

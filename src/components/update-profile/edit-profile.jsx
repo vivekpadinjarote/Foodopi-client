@@ -2,10 +2,10 @@ import { useState } from "react";
 import api from "../../utils/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../../store/auth";
+import AlertToast from "../alertToast";
 
 export default function EditProfile({setShowEditProfile}){
     const user= useSelector((store)=>store.auth.user)
-    const accessToken = useSelector((store)=>store.auth.accessToken)
     const dispatch = useDispatch()
     const [data , setData] = useState({
         name: user.userName,
@@ -13,13 +13,18 @@ export default function EditProfile({setShowEditProfile}){
         address: user.userAddress,
         phone: user.userPhone
     })
+    const [toast, setToast] = useState({ show: false, type: '', message: '' });
 
     async function handleSubmit() {
         const response = await api.put('/api/user/profile',data)
 
         if(response.data.success){
             dispatch(setCredentials({user:response.data.user}))
-            setShowEditProfile(false)
+            setToast({ show: true, type: 'success', message: 'Profile updated successfully!' });
+            setTimeout(() => {
+                setToast({ show: false, type: '', message: '' });
+                setShowEditProfile(false);
+            }, 1500);
         }
 
     }
@@ -32,7 +37,14 @@ export default function EditProfile({setShowEditProfile}){
 
 
     return(
-        
+        <>
+        {toast.show && (
+            <AlertToast
+                type={toast.type}
+                message={toast.message}
+                onClose={() => setToast({ show: false, type: '', message: '' })}
+            />
+        )}
         <div className="form-popup">
             <div className="form-popup-container">
                 <div className="form-title fancy-font">
@@ -51,6 +63,6 @@ export default function EditProfile({setShowEditProfile}){
                 </div>
             </div>
         </div>
-        
+        </>
     )
 }
