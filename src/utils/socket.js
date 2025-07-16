@@ -5,7 +5,7 @@ const socket = io("https://your-backend.onrender.com",{
     },
     withCredentials:true,
     autoConnect:false,
-    transports: ['websocket'],
+    transports: ['websocket','polling'],
 })
 
 export default socket
