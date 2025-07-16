@@ -26,23 +26,28 @@ function Navbar({setShowLogin}){
                     <input type='checkbox' id='sidebar-active'></input>
                     <label htmlFor="sidebar-active" className='open-sidebar-button'><i className='material-icons'>menu</i></label>
                     <label htmlFor='sidebar-active' id='overlay'></label>
+                    
                 <ul className='nav-items'>
                     <label htmlFor='sidebar-active' className='close-sidebar-button'><i className='material-icons'>close</i></label>
-                    <li><NavLink to={'/'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>search</i> Search</NavLink></li>
-                    <li><NavLink to={'/home'} end className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>home</i> Home</NavLink></li>
-                    <li><NavLink to={'/home/cart'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>shopping_cart</i> My Cart</NavLink></li>
+                    {user?.userRole==='admin' && <li><NavLink to={'/admin'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}>Dashboard</NavLink></li>}
+                    <li><NavLink to={'/home'} end className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}> Home</NavLink></li>
+                    <li><NavLink to={'/about'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}> About Us</NavLink></li>
+                    <li><NavLink to={'/contact'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}> Contact Us</NavLink></li>
+                    <div className='navbar-icon-div'>
+                    <li><NavLink to={'/home/cart'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>shopping_cart</i></NavLink></li>
                     {
-                        user && <li><NavLink to={'/home/profile'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>person</i> Profile</NavLink></li>
+                        user && <li><NavLink to={'/home/profile'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>person</i></NavLink></li>
                     }
-                    {user?.userRole==='admin' && <li><NavLink to={'/admin'} className={'listitem'} onClick={()=>document.getElementById('sidebar-active').checked = false}><i className='material-icons'>admin_panel_settings</i> Dashboard</NavLink></li>}
                     {user 
                     ? 
-                    <li onClick={()=>{handleLogout(); document.getElementById('sidebar-active').checked = false} }><button className='listitem nav-btn'><i className='material-icons'>logout</i> Logout</button></li>
+                    <li onClick={()=>{handleLogout(); document.getElementById('sidebar-active').checked = false} }><button className='listitem nav-btn'><i className='material-icons'>logout</i></button></li>
                     :
-                    <li onClick={()=>{setShowLogin(true); document.getElementById('sidebar-active').checked = false} }><button className='listitem nav-btn'><i className='material-icons'>login</i> Login</button></li>
+                    <li onClick={()=>{setShowLogin(true); document.getElementById('sidebar-active').checked = false} }><button className='listitem nav-btn'><i className='material-icons'>login</i></button></li>
                     }
+                    </div>
 
                 </ul>
+                
             </div>
         </div>
         </>

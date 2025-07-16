@@ -29,7 +29,8 @@ function LandingPage(){
         <nav className='landing-nav'>
             <ul className='landing-nav-items'>
                     <li><NavLink to={'/home'} className={'landing-listitem'}> Home</NavLink></li>
-                    <li><NavLink to={'/home'} className={'landing-listitem'}>About Us</NavLink></li>
+                    <li><NavLink to={'/about'} className={'landing-listitem'}>About Us</NavLink></li>
+                    <li><NavLink to={'/contact'} className={'landing-listitem'}>Contact Us</NavLink></li>
                     {
                         user && <li><NavLink to='/home/profile' className={'landing-listitem'}>Profile</NavLink></li>
                     }
@@ -52,13 +53,14 @@ function LandingPage(){
         <div className='tagline'>
             <h3>Feel the Explosive Flavours</h3>
             <p>From street-side classics to gourmet delights.</p>
-               <p> Discover your next favorite dish.</p>
+               {/* <p> Discover your next favorite dish.</p> */}
+               <p>Delivering happiness, one meal at a time.</p>
 
             <NavLink to={'/home'} id='link'><span>Explore</span> The World of Flavours</NavLink>
 
         </div>
 
-        <Outlet />
+        <Outlet context={setShowLogin}/>
         
         </>
     )

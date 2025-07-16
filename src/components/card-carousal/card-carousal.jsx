@@ -42,7 +42,7 @@ function CardCarousal() {
         {images.map((src, index) => (
           <SwiperSlide key={index}>
             <div className="slide-inner">
-              <div className="card">
+              <div>
                 <div className="card-image">
                   <img src={src} alt={`Slide ${index}`} className="card-img" />
                 </div>

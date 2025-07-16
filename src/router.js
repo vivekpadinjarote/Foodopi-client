@@ -8,13 +8,17 @@ import AdminPage from './pages/admin/admin'
 import MenuList from './pages/admin/components/menu'
 import OrderList from './pages/admin/components/orders'
 import Root from './root'
+import AboutUs from './pages/AboutUs/aboutus'
+import ContactUs from './pages/ContactUs/contactus'
 
 
 
 const router = createBrowserRouter([
     {path:'/', element:<Root />,children: [
         {index: true, element: <LandingPage />},
-    {path: '/home', element: <App />, children: [
+        {path:"/about", element:<AboutUs />},
+        {path:'/contact', element:<ContactUs /> },
+        {path: '/home', element: <App />, children: [
         {index: true, element: <Home />},
         {path: 'profile', element: <Profile />},
         {path: 'cart', element: <Cart />}

@@ -101,8 +101,8 @@
   }
 
   .image-link {
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     display: flex;
     border-radius: 50%;
   }
@@ -113,7 +113,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: azure;
-    font-size: 5px;
+    font-size: 8px;
     text-shadow: 1px 1px 4px rgb(0, 0, 0, 0.7);
   }
 
@@ -121,10 +121,11 @@
     display: flex;
     max-width: 360px;
     margin: auto;
-    flex-flow: wrap;
+    overflow-y: scroll;
     row-gap: 1px;
-    column-gap: 5px;
+    column-gap: 8px;
     justify-content: center;
+    scrollbar-width: none;
   }
 
   .product-list-nav.stuck {

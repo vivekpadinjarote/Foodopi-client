@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import api from './utils/axios';
 import { logout, setCredentials } from './store/auth';
-// import { clearCart } from './store/cartSlice';
 import { setCart } from './store/cartSlice';
+import Login from './components/Login-popup/login';
 
 
 function Root() {
@@ -105,7 +105,9 @@ function Root() {
 
   return (
     <>
-    <Outlet />
+    
+        {showLogin? <Login setShowLogin={setShowLogin} />:<></>}
+    <Outlet context={{setShowLogin, showLogin}}/>
     </>
   );
 }
