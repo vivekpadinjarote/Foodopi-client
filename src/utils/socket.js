@@ -1,5 +1,5 @@
 import {io} from 'socket.io-client'
-const socket = io("https://your-backend.onrender.com",{
+const socket = io("https://foodopia-server.onrender.com",{
     auth:{
         token:localStorage.getItem('accessToken')|| ''
     },
