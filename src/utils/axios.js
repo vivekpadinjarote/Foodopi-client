@@ -3,7 +3,7 @@ import {store} from '../store/store'
 import { logout, setCredentials } from '../store/auth';
 
 const api = axios.create({
-    baseURL:"http://localhost:4000",
+    baseURL:"https://foodopia-server.onrender.com",
     withCredentials:true,
 })
 
