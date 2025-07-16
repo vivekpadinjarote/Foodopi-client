@@ -8,7 +8,7 @@ function MyOrders(){
         try{
         const response = await api.get('/api/order/my-orders')
         if(response.data.success){
-            console.log( response.data.orders)
+            // console.log( response.data.orders)
             console.log(response.data.message)
             setOrders(response.data.orders)
         }else{

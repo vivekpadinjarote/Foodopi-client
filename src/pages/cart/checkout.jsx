@@ -27,7 +27,7 @@ const [alertType, setAlertType] = useState('success');
                 name: "Foodopia",
                 order_id: orderId,
                 handler: async function (response) {
-                    console.log("Payment response:", response);
+                    // console.log("Payment response:", response);
                     try{
                         const res = await api.post("/api/order/verify", {
                             razorpay_order_id: response.razorpay_order_id,
@@ -69,7 +69,7 @@ const [alertType, setAlertType] = useState('success');
             };
     const rzp = new window.Razorpay(options);
     rzp.open();
-        console.log("Order created successfully:", response.data);
+        // console.log("Order created successfully:", response.data);
     } catch (error) {
         console.error("Error creating order:", error);
     }

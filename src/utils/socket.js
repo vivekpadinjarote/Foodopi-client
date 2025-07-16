@@ -4,7 +4,8 @@ const socket = io("https://your-backend.onrender.com",{
         token:localStorage.getItem('accessToken')|| ''
     },
     withCredentials:true,
-    autoConnect:false
+    autoConnect:false,
+    transports: ['websocket'],
 })
 
 export default socket

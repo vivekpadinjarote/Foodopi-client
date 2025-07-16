@@ -32,11 +32,11 @@ export default function Login({ setShowLogin }) {
         // 🛒 1. Fetch backend cart after login
         const backendCartRes = await api.get("/api/cart");
         const backendCartItems = backendCartRes.data?.cartData?.items || [];
-        console.log("Backend Cart Items:", backendCartItems);
+        // console.log("Backend Cart Items:", backendCartItems);
 
         // 🛒 2. Merge Redux (guest) cart with backend cart
         const mergedCart = cart.map((item) => ({ ...item })); // Create a copy of the Redux cart
-        console.log("Redux Cart Items:", mergedCart);
+        // console.log("Redux Cart Items:", mergedCart);
 
         const mergedCartwithBackend = mergedCart
         backendCartItems.forEach((item) => {
@@ -53,7 +53,7 @@ export default function Login({ setShowLogin }) {
             });
           }
         });
-        console.log("Merged Cart Items:", mergedCartwithBackend);
+        // console.log("Merged Cart Items:", mergedCartwithBackend);
 
         // 🧮 3. Calculate total price and item count
         
@@ -71,7 +71,7 @@ export default function Login({ setShowLogin }) {
             quantity: item.quantity,
           }));
 
-          console.log("Final Cart Items:", finalCartItems);
+          // console.log("Final Cart Items:", finalCartItems);
           dispatch(
             setCart({
               items: finalCartItems,

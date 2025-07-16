@@ -23,7 +23,7 @@ function Menulist(props){
             ...prev,[index]:(prev[index]||0)+1
         }))
 
-        console.log("Selected Item:", selectedItem);
+        // console.log("Selected Item:", selectedItem);
 
         dispatch(addItem(selectedItem));
         // Update the cart in the backend
@@ -31,7 +31,7 @@ function Menulist(props){
            const response =  await api.post('/api/cart', { cartItem: selectedItem , quantity: (count[index]||0)+1 });
               if(response.data.success){
                 console.log("Item added to cart successfully");
-                console.log("Updated Cart:", response.data.cartData);
+                // console.log("Updated Cart:", response.data.cartData);
               }
     }
 }
@@ -45,7 +45,7 @@ function Menulist(props){
            const response =  await api.post('/api/cart', { cartItem: selectedItem , quantity: (count[index]||0)-1 });
               if(response.data.success){
                 console.log("Item removed from cart successfully");
-                console.log("Updated Cart:", response.data.cartData);
+                // console.log("Updated Cart:", response.data.cartData);
               }else{
                 console.error("Failed to remove item from cart:", response.data.message);
               }
